@@ -3,3 +3,4 @@ python-dotenv
 aiogram>=3.0.0
 google-generativeai
 gunicorn==23.0.0
+uvicorn
