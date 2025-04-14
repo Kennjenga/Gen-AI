@@ -1,0 +1,10 @@
+import asyncio
+from main import bot, dp
+
+
+async def main():
+    print("Starting Telegram bot...")
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
