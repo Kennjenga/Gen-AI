@@ -10,3 +10,5 @@
 ./RAG-gemini/.env
 langchain/LangChain_with_Hugging_Face.ipynb
 langchain/Custom_Chatbot_for_any_website.ipynb
+
+teleai/menv/*
