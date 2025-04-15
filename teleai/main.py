@@ -117,10 +117,10 @@ async def gemini_chat(message: types.Message):
         await message.reply("Sorry, I encountered an error. Try the /help command.")
 
 
-async def main():
-    print("Starting Telegram bot...")
-    # Start the bot
-    await dp.start_polling(bot)
+# async def main():
+#     print("Starting Telegram bot...")
+#     # Start the bot
+#     await dp.start_polling(bot)
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     asyncio.run(main())

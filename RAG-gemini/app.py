@@ -9,8 +9,6 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 
 
-
-
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -25,14 +23,17 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000)
 docs = text_splitter.split_documents(data)
 
 
-vectorstore = Chroma.from_documents(documents=docs, embedding=GoogleGenerativeAIEmbeddings(model="models/embedding-001"))
+vectorstore = Chroma.from_documents(
+    documents=docs, embedding=GoogleGenerativeAIEmbeddings(model="models/embedding-001"))
 
-retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 10})
+retriever = vectorstore.as_retriever(
+    search_type="similarity", search_kwargs={"k": 10})
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro",temperature=0,max_tokens=None,timeout=None)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-pro", temperature=0, max_tokens=None, timeout=None)
 
 
-query = st.chat_input("Ask me anything: ") 
+query = st.chat_input("Ask me anything: ")
 prompt = query
 
 system_prompt = (
